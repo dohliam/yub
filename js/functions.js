@@ -8,21 +8,13 @@
         window.allArray = allArray.sort();
       }
 
-      function lslong(arr1,arr2) {
-        var longArray = [];
-        if (modson == "off") {
-          for (var i = 0; i < arr1.length; i++) {
-            longArray.push(arr1[i].n + "\t" + arr1[i].d + "\t" + arr1[i].a + "\t" + arr1[i].f);
-          }
-        } else {
-          for (var i = 0; i < arr1.length; i++) {
-            longArray.push(arr1[i].n + "\t" + arr1[i].d + "\t" + arr1[i].a + "\t" + arr1[i].f);
-          }
-          for (var i = 0; i < arr2.length; i++) {
-            longArray.push(arr2[i].n + "\t" + arr2[i].d + "\t" + arr2[i].a + "\t" + arr2[i].f);
-          }
+      function lslong(n,p) {
+        var f = [];
+        if ("off" == modson) for (var i = 0; i < n.length; i++) f.push(n[i].n + "\t" + n[i].d + "\t" + n[i].a + "\t" + n[i].f); else {
+          for (var i = 0; i < n.length; i++) f.push(n[i].n + "\t" + n[i].d + "\t" + n[i].a + "\t" + n[i].f);
+          for (var i = 0; i < p.length; i++) f.push(p[i].n + "\t" + p[i].d + "\t" + p[i].a + "\t" + p[i].f);
         }
-        window.longArray = longArray.sort();
+        window.longArray = f.sort();
       }
 
       function uniq(a) {
