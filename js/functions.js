@@ -3,14 +3,8 @@
         return false;
       }
 
-      function lsshort(arr1,arr2,arr3) {
-        var allArray = [];
-        var a = arguments;
-        for (var i = 0; i < arguments.length; i++) {
-          for (var l = 0; l < arguments[i].length; l++) {
-            allArray.push(arguments[i][l].n + "\t" + arguments[i][l].d);
-          }
-        }
+      function lsshort() {
+        for (var allArray = [], i = 0; i < arguments.length; i++) for (var l = 0; l < arguments[i].length; l++) allArray.push(arguments[i][l].n + "\t" + arguments[i][l].d);
         window.allArray = allArray.sort();
       }
 
