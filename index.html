@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <title>yub.js | web command-line</title>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+
+    <link rel="shortcut icon" href="favicon.ico?v=2">
+    <link rel="stylesheet" href="nub.css">
+
+    <script src="js/commands.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/engines.js"></script>
+<!--     <script src="js/shortcuts.js"></script> -->
+    <script src="js/tips.js"></script>
+    <script src="js/mods.js"></script>
+
+    <script type="text/javascript">
+      window.onload = function() { document.getElementById('yub').focus(); } 
+
+      var modson = "on";
+
+      if (typeof(mods) == 'undefined') {
+        modson = "off";
+      }
+    </script>
+  </head>
+  <body onload="var geturl = location.href; if (/\?/.test(geturl) == true) { var args = /\?(.*)/.exec(geturl)[1]; yubSearch(decodeURI(args)); finished = 'done';}">
+    <center>
+    <div id="ybox">
+      <h2>yub.js</h2>
+      <h3>web command-line</h3>
+        <form>
+            <input type="text" value="" autofocus="autofocus" autocomplete="off" id="yub">
+            <input type="submit" value="yubSearch" onclick="return yubSearch(document.getElementById('yub').value)">
+            <div class="grey"><p class='small'>type 'list' to see all available search shortcuts, or 'tips' for more commands</p></div>
+        </form>
+    </div>
+    <div id="output">&nbsp;</div>
+    </center>
+
+    <div id="create" style="display:none;">
+    <center>
+      <h4>Create a new yubSearch command!</h4>
+        <table>
+          <tr><td>Shortcut Name:</td><td><input type="text" id="scname" size="50" value="Enter the command name here" onclick="this.value='';"></td></tr>
+          <tr><td>Search Address:</td><td><input type="text" id="saddr" size="50" value="Enter search URL with search term replaced by %s" onclick="this.value='';"></td></tr>
+          <tr><td>Default URL:</td><td><input type="text" id="defurl" size="50" value="Enter the address to go to if search term is blank" onclick="this.value='';"></td></tr>
+          <tr><td>Description:</td><td><input type="text" id="descr" size="50" value="Enter a description or site title" onclick="this.value='';"></td></tr>
+        </table><br>
+      <input id="createcomm" type="button" value="Create New Command!" accesskey='c' onclick='createYub();'>
+    </center>
+    </div>
+
+    <div id="container" style="margin: 0 auto; width: 300px; padding: 20px;">
+    <div id="timer" style="display:none; position:absolute;">
+      <span style="font-size:small; float:right; cursor:pointer;" onclick='clearTimer();' title="click to close">x</span><br>
+      <center>
+        <span id="hour">00</span>:<span id="min">00</span>:<span id="sec">00</span><br><br>
+        <input type="button" id="start" onClick="stopWatch()" accesskey='s' title="Shift+Alt+S" value="Start">
+        <input type="button" id="pause" onClick="pause()" accesskey='p' title="Shift+Alt+P" value="Pause">
+        <input type="button" id="play" onClick="play()" accesskey='o' title="Shift+Alt+O" value="Continue">
+        <input type="button" id="reset" onClick="reset()" accesskey='r' title="Shift+Alt+R" value="Reset">
+      </center>
+    </div>
+    </div>
+
+  </body>
+</html>
