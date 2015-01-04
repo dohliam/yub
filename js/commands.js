@@ -79,7 +79,7 @@
         }
 
         if (/^\!/.test(nub)) {
-          addr = nub.replace(/^\!/,"http://");
+          addr = nub.replace(/^\! */,"http://");
           window.location=addr;
           finished = "done";
         }
