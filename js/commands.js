@@ -329,7 +329,7 @@
           if (/\s/.test(nub) == false) {
             o.innerHTML = "Please input some text to convert to initial caps.";
           } else {
-            o.innerHTML = sterm.replace(/(^|\s+)(.)/g,function(_, a, l){return a+l.toUpperCase();});
+            o.innerHTML = sterm.toLowerCase().replace(/(^|\s+)(.)/g,function(_, a, l){return a+l.toUpperCase();});
           }
           finished = "done";
         }
