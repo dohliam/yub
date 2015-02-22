@@ -638,6 +638,49 @@ var tips = [
           finished = "done";
         }
 
+        if (shcut == "sticky") {
+          y.value = "";
+          if (/\s/.test(nub) == false) {
+            o.innerHTML = '<link href="http://fonts.googleapis.com/css?family=Reenie+Beanie" rel="stylesheet" type="text/css"><div style="width:350px; height:350px; background-color:#ffff88; font-family:\'Reenie Beanie\'; font-size:36px; border-bottom-right-radius: 60px 5px; transform: rotate(-3deg)" id="b" contenteditable="true"></div>';
+            if (localStorage.sticky) {
+              b["innerHTML"]=[localStorage.sticky];
+            } else {
+              b["innerHTML"]="This is an editable sticky. Type something to add notes here.";
+            }
+            window.b.setAttribute("oninput", "localStorage.sticky=b['innerHTML']");
+            window.b.focus();
+          } else if (/^\-r/.test(sterm) == true) {
+              localStorage.sticky = "";
+              o.innerHTML = "Local storage has been cleared.";
+              y.focus();
+          } else {
+              localStorage.sticky = sterm;
+              yubComm("sticky");
+              window.b.focus();
+          }
+          finished = "done";
+        }
+
+        if (shcut == "notepad") {
+          y.value = "";
+          if (sterm == "-r") {
+            localStorage.np = "";
+            o.innerHTML = "Local storage has been cleared.";
+            y.focus();
+          } else {
+            o.innerHTML = '<div style="width:40%; height:50%; background: -moz-repeating-linear-gradient( top, snow, snow 38px, #81cbbc 40px ); line-height:40px" id="b" contenteditable="true"></div>';
+//           b["innerHTML"]=[localStorage.c];
+            if (localStorage.np) {
+              b["innerHTML"]=[localStorage.np];
+            } else {
+              b["innerHTML"]="This is an editable notepad with automatic local storage.\nClick here to add some notes.";
+            }
+            window.b.setAttribute("oninput", "localStorage.np=b['innerHTML']");
+            window.b.focus();
+          }
+          finished = "done";
+        }
+
         if (shcut == ">") {
           if (/\s/.test(nub) == false) {
             o.innerHTML = "To use >, input a yubnub command and a search term as arguments, for example:<br>> wp Hedgehogs<br>(Uses Google to search Wikipedia and goes automatically to the first result)";
