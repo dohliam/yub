@@ -402,7 +402,7 @@
             o.innerHTML = "Local storage has been cleared.";
             y.focus();
           } else {
-            o.innerHTML = '<div style="width:40%; height:50%; background: -moz-repeating-linear-gradient( top, snow, snow 38px, #81cbbc 40px ); line-height:40px" id="b" contenteditable="true"></div>';
+            o.innerHTML = '<div style="width:40%; height:50%; background: -webkit-repeating-linear-gradient( top, #FFFAFA, #FFFAFA 35px, #81cbbc 40px ); background: -moz-repeating-linear-gradient( top, snow, snow 38px, #81cbbc 40px ); background: repeating-linear-gradient( top, snow, snow 38px, #81cbbc 40px ); line-height:40px" id="b" contenteditable="true"></div>';
 //           b["innerHTML"]=[localStorage.c];
             if (localStorage.np) {
               b["innerHTML"]=[localStorage.np];
