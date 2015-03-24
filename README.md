@@ -6,7 +6,6 @@ The whole thing was designed from the outset to be a single page standalone html
 
 The list of available search engines is completely modular: you can drop in your own list of commonly visited websites by editing or replacing the mods.js file (json). Making your own new commands is easy -- just use the [`create`](https://dohliam.github.io/yub/?man create) command (with the name of the new command as an [optional argument](https://dohliam.github.io/yub/?man create <i>command%3C/i%3E)). Feel free to add your own new functions or extend existing ones by editing functions.js. Oh, and regular expressions are [supported everywhere by default](https://dohliam.github.io/yub/?s ^gn).
 
-## Contents
 
 * [1.1 Cool Things To Try Out](#cool-things-to-try-out)
   * [1.1.1 The Basics](#the-basics)
@@ -16,13 +15,14 @@ The list of available search engines is completely modular: you can drop in your
   * [1.2.2 mods.js](#modsjs)
   * [1.2.3 Customization](#customization)
 * [1.3 API](#api)
-* [1.4 Upcoming Features](#upcoming-features)
-* [1.5 History](#history)
-* [1.6 Development](#development)
-* [1.7 It Might Not Be For You](#it-might-not-be-for-you)
-* [1.8 Similar projects](#similar-projects)
-* [1.9 Acknowledgements](#acknowledgements)
-* [1.10 License](#license)
+* [1.4 Embedding](#embedding)
+* [1.5 Upcoming Features](#upcoming-features)
+* [1.6 History](#history)
+* [1.7 Development](#development)
+* [1.8 It Might Not Be For You](#it-might-not-be-for-you)
+* [1.9 Similar Projects](#similar-projects)
+* [1.10 Acknowledgements](#acknowledgements)
+* [1.11 License](#license)
 
 
 ## Cool Things To Try Out
@@ -116,6 +116,19 @@ Example 2:
 * yub.js URL: file:///home/username/yub/index.html
 * command: rand site
 * _full URL for this command_: `file:///home/user/yub/index.html?rand site`
+
+
+## Embedding
+
+You can embed yub.js on any webpage and get a functional web command-line that looks like this:
+
+![Embedded yub.js command-line](https://dohliam.github.io/img/embedded_yub.png)
+
+Just copy the following code and include it anywhere on the page:
+```
+<form method="get" action="#" onsubmit="window.location='https://dohliam.github.io/yub/?'+window.yub.value; return false"><img src="yub.gif" />&nbsp;<input id="yub" type="text" size=27 value="yub.js web command-line" autocomplete="off" style="border-style: none none solid; color:gray; font-family:monospace;" onfocus="this.value=''; this.style.color='black'" onblur="if (this.value=='') {this.value='yub.js: enter commands here';this.style.color='gray'}">&nbsp;<input style="visibility: hidden" type="submit" value="" />
+```
+There is probably a more elegant way to do this, but after some testing this seemed to be the only way that works in both Firefox and Chrome. Feel free to experiment and open a pull request if you find something better!
 
 
 ## Upcoming Features
