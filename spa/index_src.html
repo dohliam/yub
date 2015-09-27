@@ -14,7 +14,7 @@
       }
       h2 {
         color: #FF8000;
-        font: 72px "Arial Black";
+        font: 72px 'Open Sans', sans-serif;
         margin-top: auto;
         margin-bottom: auto;
       }
@@ -99,6 +99,7 @@ var engines = [
   {"n":"gfim", "a":"https://www.google.com/search?tbm=isch&as_q=%s&tbs=sur:fmc", "d":"Google Free Image Search", "f":"https://images.google.com/"},
   {"n":"ngram", "a":"https://books.google.com/ngrams/graph?content=%s", "d":"Google Books Ngram Viewer", "f":"https://books.google.com/ngrams"},
   {"n":"gnas", "a":"https://www.google.com/search?q=%s site:news.google.com/newspapers", "d":"Google News Archive Search", "f":"http://news.google.com/newspapers"},
+  {"n":"gsite", "a":"https://www.google.com/search?q=site:%s", "d":"Google Site Search", "f":"http://google.com/"},
   {"n":"hn", "a":"https://hn.algolia.com/?q=%s", "d":"Hacker News", "f":"https://news.ycombinator.com/"},
   {"n":"how", "a":"http://www.wikihow.com/?search=%s", "d":"wikiHow - How to do anything", "f":"http://www.wikihow.com/"},
   {"n":"ifixit", "a":"https://www.ifixit.com/Guide/search/%s", "d":"iFixit - The free repair manual", "f":"http://www.ifixit.com/"},
@@ -150,9 +151,11 @@ var engines = [
   {"n":"sp", "a":"https://startpage.com/do/search?query=%s", "d":"Startpage Web Search", "f":"https://startpage.com/"},
   {"n":"spim", "a":"https://startpage.com/do/search?cat=pics&query=%s", "d":"Startpage Image Search", "f":"https://startpage.com/"},
   {"n":"spv", "a":"https://startpage.com/do/search?cat=video&query=%s", "d":"Startpage Video Search", "f":"https://startpage.com/"},
+  {"n":"spsite", "a":"https://startpage.com/do/search?query=site:%s", "d":"Startpage Site Search", "f":"https://startpage.com/"},
   {"n":"ix", "a":"https://ixquick.com/do/search?q=%s", "d":"Ixquick Search Engine", "f":"https://www.ixquick.com/"},
   {"n":"ixim", "a":"https://ixquick.com/do/search?cat=pics&query=%s", "d":"Ixquick Image Search", "f":"https://ixquick.com/"},
   {"n":"ixv", "a":"https://ixquick.com/do/search?cat=video&query=%s", "d":"Ixquick Video Search", "f":"https://ixquick.com/"},
+  {"n":"ixsite", "a":"https://ixquick.com/do/search?q=site:%s", "d":"Ixquick Site Search", "f":"https://www.ixquick.com/"},
   {"n":"blv", "a":"http://www.blinkx.com/search/%s", "d":"Blinkx Video Search", "f":"http://www.blinkx.com/"},
   {"n":"vi", "a":"http://vimeo.com/search?q=%s", "d":"Vimeo Videos", "f":"https://vimeo.com/"},
   {"n":"fspam", "a":"http://www.stopforumspam.com/ipcheck/%s", "d":"Stop Forum Spam - IP Check", "f":"http://www.stopforumspam.com/"},
