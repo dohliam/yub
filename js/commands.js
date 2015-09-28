@@ -500,6 +500,15 @@
           finished = "done";
         }
 
+        if (shcut == "skin") {
+          stylesheet = document.getElementById("stylesheet");
+// 	  if ls then list available skins
+// 	  if non-existent then print error
+          stylesheet.href = "css/" + sterm + ".css";
+          o.innerHTML = "yub.js skin successfully changed to \"" + sterm + "\"!";
+          finished = "done";
+        }
+
         if (shcut == "tips" || shcut == "help" || shcut == "man") {
           var commList = "<table>";
           var noresult = 0;

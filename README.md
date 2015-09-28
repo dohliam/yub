@@ -14,15 +14,16 @@ The list of available search engines is completely modular: you can drop in your
   * [1.2.1 engines.js](#enginesjs)
   * [1.2.2 mods.js](#modsjs)
   * [1.2.3 Customization](#customization)
-* [1.3 API](#api)
-* [1.4 Embedding](#embedding)
-* [1.5 Upcoming Features](#upcoming-features)
-* [1.6 History](#history)
-* [1.7 Development](#development)
-* [1.8 It Might Not Be For You](#it-might-not-be-for-you)
-* [1.9 Similar Projects](#similar-projects)
-* [1.10 Acknowledgements](#acknowledgements)
-* [1.11 License](#license)
+* [1.3 Skins](#skins)
+* [1.4 API](#api)
+* [1.5 Embedding](#embedding)
+* [1.6 Upcoming Features](#upcoming-features)
+* [1.7 History](#history)
+* [1.8 Development](#development)
+* [1.9 It Might Not Be For You](#it-might-not-be-for-you)
+* [1.10 Similar Projects](#similar-projects)
+* [1.11 Acknowledgements](#acknowledgements)
+* [1.12 License](#license)
 
 
 ## Cool Things To Try Out
@@ -102,6 +103,40 @@ One thing to note is that some really interesting sites have been left out of en
 * Local newspapers: The wiki will eventually host links to mods.js files for regional newspapers from around the world (so you'll be able to pick up a mods.js file for South African or Thai or Portuguese newspapers), but in the meantime create your own shortcuts to the local and international newspapers you read most frequently -- most websites have their own search function, but if not you can always link to a Google result for the specific site
 * If your favourite radio station has an embeddable stream, you can add a link to it in functions.js and have it pop out under the command-line while you do other stuff
 
+## Skins
+
+Theming support is available in the form of custom css files loaded through the `skin` command. Skins are basically just css files (located in the `/css` folder), and can be loaded by entering the command `skin` and the name of the skin (there is no need to add the `.css` extension).
+
+To return to the default skin, just type `skin default`. To remove all css, use `skin nocss`. Skins currently don't persist across yub sessions (this would require setting a cookie, which we've managed to avoid so far), but you can change the link/bookmark to your yub.js instance to something like `https://dohliam.github.io/yub/?skin terminal` to always start yub.js with a particular skin loaded.
+
+To make a new skin, just copy one of the existing skin files to a new file e.g. `mynewskin.css` and customize to your heart's content!
+
+Here are some screenshots of the skins that come with yub.js:
+
+_default_:
+
+![default skin screenshot](http://imgur.com/s06B83P.jpg)
+
+_terminal_:
+
+![terminal skin screenshot](http://imgur.com/v6RhFwG.jpg)
+
+_mountainlake_:
+
+![mountainlake skin screenshot](http://imgur.com/y33lZmP.jpg)
+
+_rays_:
+
+![rays skin screenshot](http://imgur.com/Hbr6Juj.jpg)
+
+_skyline_:
+
+![skyline skin screenshot](http://imgur.com/QrVPomR.jpg)
+
+_nocss_:
+
+![nocoss skin screenshot](http://imgur.com/LQiAsX3.jpg)
+
 
 ## API
 
@@ -139,7 +174,7 @@ It would be awesome to see everyone's custom mods.js files -- links to these can
 
 Some planned features that are still in the works:
 
-* theming support (skins)
+* ~~theming support (skins)~~ _done!_
 * translation support for multiple languages
 * command tagging
 * more extensive man entries
@@ -185,7 +220,7 @@ On the other hand, if things that are slower than they need to be bother you _on
 
 * **Bookmarks managers**: Cloud sync options for almost all major browsers are now ubiquitous, and if not one of those services, you could always backup your bookmarks file on a server somewhere and be done with it. If that works for you, great -- but frustration with these approaches is what led to yub.js in the first place.
 
-* **Sticklers for elegant code**: As mentioned before, the code is pretty ugly at the moment -- not on purpose, of course, but since every new feature has been added due due to some immediately pressing need, kludges and all sorts of brute force inefficient loops abound. That will hopefully change over time as the code is (slowly) refactored. But if ugly code offends you, you may want to avert your eyes.
+* **Sticklers for elegant code**: As mentioned before, the code is pretty ugly at the moment -- not on purpose, of course, but since every new feature has been added due to some immediately pressing need, kludges and all sorts of brute force inefficient loops abound. That will hopefully change over time as the code is (slowly) refactored. But if ugly code offends you, you may want to avert your eyes.
 
 * **Haters of eval**: If you believe that [eval is evil](http://blogs.msdn.com/b/ericlippert/archive/2003/11/01/53329.aspx) under _any_ circumstances (even parsing sanitized mathematical expressions)... then you may want to just remove the calculator function from your version of yub.js.
 
@@ -206,6 +241,11 @@ Many thanks to [Jon Aquino](http://jona.ca/), and everyone who contributed to [Y
 Minified single-page version made using [Uglifier](https://github.com/lautis/uglifier) for Ruby.
 
 Table of contents generated by [https://github.com/dohliam/tocdown](tocdown).
+
+Background wallpapers for various skins:
+* ["Untitled"](https://flic.kr/p/9Yq8g6) by [tiltti](https://www.flickr.com/photos/tiltti/), released under a CC-BY license (used in the ["mountainlake" skin](https://dohliam.github.io/yub/?skin mountainlake))
+* [Mountain Monastery Sunrise](https://flic.kr/p/xTfwsF) by [Ronan Shenhav](https://www.flickr.com/photos/ronan_shenhav/), released under a CC-BY license (used in the ["rays" skin](https://dohliam.github.io/yub/?skin rays))
+* [Hong Kong from Victoria Peak](https://flic.kr/p/9e6Ngd) by [Robert Lowe](https://www.flickr.com/photos/rmlowe/), released under a CC-BY license (used in the ["skyline" skin](https://dohliam.github.io/yub/?skin skyline))
 
 ## License
 

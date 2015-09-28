@@ -1,0 +1,46 @@
+      body {
+        background-color: #141414;
+        font-size: large;
+        font: 0.8em 'Andale Mono', Consolas, 'Courier New';
+        color: #63de00;
+/*         font-family: sans-serif; */
+      }
+      h2 {
+        color: #63de00;
+        font-size: 72px;
+/*         font: 72px 'Open Sans', sans-serif; */
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+      h3 {
+        color: #63de00;
+        margin-top: auto;
+        margin-bottom: 25px;
+      }
+      input[type=text] {
+        background-color: #141414;
+        border-style: none none solid none;
+        color: #63de00;
+        border-color: #63de00;
+        border: 0px 4px 0px 4px;
+        padding: 1px 6px 1px 6px;
+      }
+      input[type=submit] {
+        background-color: #141414;
+        border-style: none;
+        color: #63de00;
+        border-color: #63de00;
+        border: 0px 4px 0px 4px;
+        padding: 1px 6px 1px 6px;
+      }
+      .small {
+        font-size: small;
+      }
+      .grey {
+        color: #63de00;
+      }
+      #create input[type=text] {
+        color: gray;
+        font-style: italic;
+        padding: 1px 6px 1px 6px;
+      }

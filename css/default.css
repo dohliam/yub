@@ -1,0 +1,25 @@
+      body {
+        font-size: large;
+        font-family: sans-serif;
+      }
+      h2 {
+        color: #FF8000;
+        font: 72px 'Open Sans', sans-serif;
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+      h3 {
+        margin-top: auto;
+        margin-bottom: 25px;
+      }
+      .small {
+        font-size: small;
+      }
+      .grey {
+        color: gray;
+      }
+      #create input[type=text] {
+        color: gray;
+        font-style: italic;
+        padding: 1px 6px 1px 6px;
+      }
