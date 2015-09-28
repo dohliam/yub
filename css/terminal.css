@@ -3,12 +3,10 @@
         font-size: large;
         font: 0.8em 'Andale Mono', Consolas, 'Courier New';
         color: #63de00;
-/*         font-family: sans-serif; */
       }
       h2 {
         color: #63de00;
-        font-size: 72px;
-/*         font: 72px 'Open Sans', sans-serif; */
+        font: 72px 'Andale Mono', Consolas, 'Courier New';
         margin-top: auto;
         margin-bottom: auto;
       }
