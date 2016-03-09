@@ -1,4 +1,5 @@
 var engines = [
+  {"n":"about", "a":"", "d":"Information about yub.js", "f":"https://github.com/dohliam/yub"},
   {"n":"g", "a":"https://www.google.com/search?q=%s", "d":"Google Search", "f":"https://google.com/"},
   {"n":"gim", "a":"https://www.google.com/search?tbm=isch&q=%s", "d":"Google Image Search", "f":"https://images.google.com/"},
   {"n":"gmail", "a":"https://mail.google.com/mail/u/0/#search/%s", "d":"Gmail", "f":"https://gmail.com/"},
