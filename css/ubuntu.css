@@ -4,6 +4,7 @@ body {
         font-size: large;
         font-family: Ubuntu,sans-serif;
         font-weight: 400;
+        color: white;
         background-color: #2C001E; /* Dark Aubergine */
       }
       h2 {
