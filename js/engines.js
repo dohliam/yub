@@ -139,4 +139,5 @@ var engines = [
   {"n":"jam", "a":"https://www.jamendo.com/en/search?qs=q=%s", "d":"Jamendo - Royalty Free Music", "f":"https://www.jamendo.com/"},
   {"n":"sc", "a":"https://soundcloud.com/search?q=%s", "d":"SoundCloud", "f":"https://soundcloud.com/"},
   {"n":"ar", "a":"https://archive.org/search.php?query=%s", "d":"Internet Archive", "f":"https://archive.org/"}
+  {"n":"medium", "a":"https://medium.com/search?q=%s", "d":"Medium Search", "f":"https://medium.com/"}
 ];
