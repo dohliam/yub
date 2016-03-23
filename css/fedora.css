@@ -1,0 +1,47 @@
+@import url(https://fonts.googleapis.com/css?family=Comfortaa);
+
+body {
+        font-size: large;
+        font-family: 'Open Sans',sans-serif;
+        font-weight: 400;
+        background-color: white;
+      }
+      h2 {
+        color: #3c6eb4; /*Fedora Blue */
+        font: 72px 'Comfortaa', sans-serif;
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+      h3 {
+        color: white;
+        margin-top: auto;
+        margin-bottom: 25px;
+        font-weight: 400;
+      }
+      .small {
+        font-size: small;
+      }
+      .grey {
+        color: #8c8c8c;
+      }
+      #create input[type=text] {
+        color: gray;
+        font-style: italic;
+        padding: 1px 6px 1px 6px;
+      }
+      .button{
+        color: white;
+        background: #79db32; /* First Green (Fedora) */
+        border: none;
+        padding: 10px 40px;
+        border-radius: 3px;
+        font-weight: bold;
+      }
+      .button:hover{
+        background: #e59728; /* Features Orange (Fedora) */
+      }
+      .inputbox{
+        border:1px solid  #3c6eb4 ;
+        padding: 10px 40px;
+        border-radius: 3px;
+      }
