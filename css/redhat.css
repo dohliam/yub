@@ -12,7 +12,7 @@ body {
     background: linear-gradient(#820000, #cc0000); /* Standard syntax */
       }
       h2 {
-        color: black; /* Ubuntu orange */
+        color: black;
         font: 72px 'overpass', sans-serif;
         font-weight: 600;
         margin-top: auto;
@@ -29,7 +29,7 @@ body {
         font-size: small;
       }
       .grey {
-        color: #dcdcdc;
+        color: #dcdcdc; /* Fedora light grey */
       }
       #create input[type=text] {
         color: gray;
@@ -37,7 +37,7 @@ body {
         padding: 1px 6px 1px 6px;
       }
       .button{
-        color: #cc0000;
+        color: #cc0000; /* Fedora red */
         background: white;
         border: none;
         padding: 8px 8px;
