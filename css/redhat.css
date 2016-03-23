@@ -1,0 +1,53 @@
+@import url("https://overpass-30e2.kxcdn.com/overpass.css");
+
+body {
+        font-size: large;
+        font-family: 'overpass',sans-serif;
+        font-weight: 400;
+        color: white;
+        background: red; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#820000, #cc0000); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#820000, #cc0000); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#820000, #cc0000); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#820000, #cc0000); /* Standard syntax */
+      }
+      h2 {
+        color: black; /* Ubuntu orange */
+        font: 72px 'overpass', sans-serif;
+        font-weight: 600;
+        margin-top: auto;
+        margin-bottom: auto;
+        background-color: white;
+      }
+      h3 {
+        color: white;
+        margin-top: auto;
+        margin-bottom: 25px;
+        font-weight: 400;
+      }
+      .small {
+        font-size: small;
+      }
+      .grey {
+        color: #dcdcdc;
+      }
+      #create input[type=text] {
+        color: gray;
+        font-style: italic;
+        padding: 1px 6px 1px 6px;
+      }
+      .button{
+        color: #cc0000;
+        background: white;
+        border: none;
+        padding: 8px 8px;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+      .button:hover{
+        color: black;
+      }
+      .inputbox{
+        border:none;
+        padding: 8px 8px;
+      }
