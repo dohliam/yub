@@ -454,7 +454,7 @@ var tips = [
             var addr = "http://randomgit.com/random.php";
             window.location = addr;
           } else if (sterm == "img") {
-            var addr = "http://imgur.com/random";
+            var addr = "https://imgur.com/random";
             window.location = addr;
           } else {
             var rfloor = sterm.replace(/[^\d]/g, "");
@@ -629,7 +629,7 @@ var tips = [
           if (/\s/.test(nub) == false) {
             o.innerHTML = "Please provide a search term for something you would like to watch.";
           } else {
-            p = '<iframe width="640" height="390" src="http://www.youtube.com/embed?listType=search&list=' + sterm + '" frameborder="0" allowfullscreen></iframe>';
+            p = '<iframe width="640" height="390" src="https://www.youtube.com/embed?listType=search&list=' + sterm + '" frameborder="0" allowfullscreen></iframe>';
             o.innerHTML = p;
           }
 //           y.value = "";
@@ -652,7 +652,7 @@ var tips = [
         if (shcut == "sticky") {
           y.value = "";
           if (/\s/.test(nub) == false) {
-            o.innerHTML = '<link href="http://fonts.googleapis.com/css?family=Reenie+Beanie" rel="stylesheet" type="text/css"><div class="note" style="width:350px; height:350px; background-color:#ffff88; font-family:\'Reenie Beanie\'; font-size:36px; border-bottom-right-radius: 60px 5px; transform: rotate(-3deg)" id="b" contenteditable="true"></div>';
+            o.innerHTML = '<link href="https://fonts.googleapis.com/css?family=Reenie+Beanie" rel="stylesheet" type="text/css"><div class="note" style="width:350px; height:350px; background-color:#ffff88; font-family:\'Reenie Beanie\'; font-size:36px; border-bottom-right-radius: 60px 5px; transform: rotate(-3deg)" id="b" contenteditable="true"></div>';
             if (localStorage.sticky) {
               b["innerHTML"]=[localStorage.sticky];
             } else {
