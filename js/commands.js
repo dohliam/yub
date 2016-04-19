@@ -375,7 +375,7 @@
         if (shcut == "sticky") {
           y.value = "";
           if (/\s/.test(nub) == false) {
-            o.innerHTML = '<link href="http://fonts.googleapis.com/css?family=Reenie+Beanie" rel="stylesheet" type="text/css"><div style="width:350px; height:350px; background-color:#ffff88; font-family:\'Reenie Beanie\'; font-size:36px; border-bottom-right-radius: 60px 5px; transform: rotate(-3deg)" id="b" contenteditable="true"></div>';
+            o.innerHTML = '<link href="http://fonts.googleapis.com/css?family=Reenie+Beanie" rel="stylesheet" type="text/css"><div class="note" style="width:350px; height:350px; background-color:#ffff88; font-family:\'Reenie Beanie\'; font-size:36px; border-bottom-right-radius: 60px 5px; transform: rotate(-3deg)" id="b" contenteditable="true"></div>';
             if (localStorage.sticky) {
               b["innerHTML"]=[localStorage.sticky];
             } else {
@@ -402,7 +402,7 @@
             o.innerHTML = "Local storage has been cleared.";
             y.focus();
           } else {
-            o.innerHTML = '<div style="width:40%; height:50%; background: -webkit-repeating-linear-gradient( top, #FFFAFA, #FFFAFA 35px, #81cbbc 40px ); background: -moz-repeating-linear-gradient( top, snow, snow 38px, #81cbbc 40px ); background: repeating-linear-gradient( top, snow, snow 38px, #81cbbc 40px ); line-height:40px" id="b" contenteditable="true"></div>';
+            o.innerHTML = '<div class="note" style="width:40%; height:50%; background: -webkit-repeating-linear-gradient( top, #FFFAFA, #FFFAFA 35px, #81cbbc 40px ); background: -moz-repeating-linear-gradient( top, snow, snow 38px, #81cbbc 40px ); background: repeating-linear-gradient( top, snow, snow 38px, #81cbbc 40px ); line-height:40px" id="b" contenteditable="true"></div>';
 //           b["innerHTML"]=[localStorage.c];
             if (localStorage.np) {
               b["innerHTML"]=[localStorage.np];
