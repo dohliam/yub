@@ -174,8 +174,7 @@
             var addr = longArray[rfloor].split("\t")[3];
             window.location = addr;
           } else if (sterm == "git") {
-            var addr = "http://randomgit.com/random.php";
-            window.location = addr;
+	    randgit();
           } else if (sterm == "img") {
             var addr = "https://imgur.com/random";
             window.location = addr;

@@ -130,3 +130,32 @@
       function clearTimer() {
         document.getElementById("timer").style.display = "none";
       }
+
+      function randgit() {
+        function init(){
+          var number = getRandomIntInclusive(0, 60000000);
+          console.log(number);
+
+          var xhr = new XMLHttpRequest();
+          xhr.open('GET', 'https://api.github.com/repositories?since=' + number, true);
+          xhr.send();
+
+          xhr.onreadystatechange = function(e){
+            openRepo(e, xhr)
+          };
+        }
+
+        function getRandomIntInclusive(min, max) {
+          min = Math.ceil(min);
+          max = Math.floor(max);
+          return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function openRepo (e, xhr){
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            var full_name = JSON.parse(xhr.responseText)[0]['full_name'];
+            location.href = 'https://github.com/' + full_name;
+          }
+        }
+        init();
+      }
