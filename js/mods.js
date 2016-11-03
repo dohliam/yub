@@ -634,7 +634,7 @@ var mods = [
   {"n":"abczh", "a":"http://www.radioaustralia.net.au/chinese/search/%s", "d":"ABC RA (zh)", "f":"http://www.radioaustralia.net.au/chinese/"},
   {"n":"abcfr", "a":"http://www.radioaustralia.net.au/french/search/%s", "d":"ABC RA (fr)", "f":"http://www.radioaustralia.net.au/french/"},
   {"n":"abcid", "a":"http://www.radioaustralia.net.au/indonesian/search/%s", "d":"ABC RA (id)", "f":"http://www.radioaustralia.net.au/indonesian/"},
-  {"n":"bd", "a":"https://www.baidu.com/s?wd=%s", "d":"百度搜索 (Baidu Search)", "f":"https://baidu.com"},
+  {"n":"bd", "a":"https://www.baidu.com/s?wd=%s", "d":"百度搜索 (Baidu Search)", "f":"https://www.baidu.com"},
   {"n":"fren", "a":"http://www.wordreference.com/fren/%s", "d":"WordReference.com French-English Dictionary", "f":"http://www.wordreference.com/fren/"},
   {"n":"enfr", "a":"http://www.wordreference.com/enfr/%s", "d":"WordReference.com English-French Dictionary", "f":"http://www.wordreference.com/enfr/"},
   {"n":"esen", "a":"http://www.wordreference.com/esen/%s", "d":"WordReference.com Spanish-English Dictionary", "f":"http://www.wordreference.com/esen/"},
