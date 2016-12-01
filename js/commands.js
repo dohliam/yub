@@ -1,10 +1,15 @@
       function yubComm(nub) {
-        var nublc = nub.toLowerCase();
+        var nublc = nub.toLowerCase().replace(/\s+$/, "");
 
         var finished = "";
 
         var o = document.getElementById("output");
         var y = document.getElementById("yub");
+
+        if (nub == "") {
+          o.innerHTML = "Please enter a command.";
+          finished = "done";
+        }
 
         if (nublc == "count") {
           var total = 0;
@@ -53,7 +58,7 @@
         loc = "";
 
         if (shcut == "list" || shcut == "ls") {
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             shcutList = "<table>";
             if (modson == "off") {
               lsshort(engines,tips);
@@ -85,7 +90,7 @@
         }
 
         if (shcut == "search" || shcut == "s") {
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             o.innerHTML = "Please enter a search string.";
           } else {
             if (modson == "off") {
@@ -114,7 +119,7 @@
 
 
         if (shcut == "whatis" || shcut == "w") {
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             o.innerHTML = "Please enter a command name.";
           } else {
             if (modson == "off") {
@@ -137,7 +142,7 @@
         }
 
         if (shcut == "where" || shcut == "wh") {
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             o.innerHTML = "Please enter a command name.";
           } else {
             if (modson == "off") {
@@ -174,7 +179,7 @@
             var addr = longArray[rfloor].split("\t")[3];
             window.location = addr;
           } else if (sterm == "git") {
-	    randgit();
+            randgit();
           } else if (sterm == "img") {
             var addr = "https://imgur.com/random";
             window.location = addr;
@@ -192,7 +197,7 @@
           } else {
             lslong(engines,mods);
           }
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             window.open(document.URL,'_blank','location=yes,height=570,width=520,scrollbars=yes,status=yes');
             window.open(window.location, '_self').close();
           } else if (/-u/.test(sterm) == true) {
@@ -242,7 +247,7 @@
 
         if (shcut == "href" || shcut == "link") {
           var url = location.href;
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             o.innerHTML = "The current url is: " + url;
           } else {
             var encurl = encodeURI(url + "?" + sterm);
@@ -253,7 +258,7 @@
         }
 
         if (shcut == "echo") {
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             o.innerHTML = "Hi there! :)";
           } else {
             o.innerHTML = sterm;
@@ -263,7 +268,7 @@
         }
 
         if (shcut == "sort") {
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             o.innerHTML = "Please input some text to sort.";
           } else {
             var d = delimit(sterm);
@@ -274,7 +279,7 @@
         }
 
         if (shcut == "shuffle") {
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             o.innerHTML = "Please input some text to shuffle.";
           } else {
             var d = delimit(sterm);
@@ -285,7 +290,7 @@
         }
 
         if (shcut == "uniq") {
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             o.innerHTML = "Please input some text as an argument to uniq.";
           } else {
             var d = delimit(sterm);
@@ -296,7 +301,7 @@
         }
 
         if (shcut == "uniqd") {
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             o.innerHTML = "Please input some text as an argument to uniqd.";
           } else {
             var d = delimit(sterm);
@@ -307,7 +312,7 @@
         }
 
         if (shcut == "ucase" || shcut == "upcase") {
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             o.innerHTML = "Please input some text to convert to upper case.";
           } else {
             o.innerHTML = sterm.toUpperCase();
@@ -316,7 +321,7 @@
         }
 
         if (shcut == "lcase" || shcut == "downcase") {
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             o.innerHTML = "Please input some text to convert to lower case.";
           } else {
             o.innerHTML = sterm.toLowerCase();
@@ -325,7 +330,7 @@
         }
 
         if (shcut == "ccase" || shcut == "capcase" || shcut == "caps") {
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             o.innerHTML = "Please input some text to convert to initial caps.";
           } else {
             o.innerHTML = sterm.toLowerCase().replace(/(^|\s+)(.)/g,function(_, a, l){return a+l.toUpperCase();});
@@ -334,7 +339,7 @@
         }
 
         if (shcut == "wc") {
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             o.innerHTML = "Please input some text to count.";
           } else if (/^\-c /.test(sterm) == true) {
             c = sterm.replace(/^\-c /,"");
@@ -348,7 +353,7 @@
         }
 
         if (shcut == "watch" || shcut == "ytp") {
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             o.innerHTML = "Please provide a search term for something you would like to watch.";
           } else {
             p = '<iframe width="640" height="390" src="https://www.youtube.com/embed?listType=search&list=' + sterm + '" frameborder="0" allowfullscreen></iframe>';
@@ -373,7 +378,7 @@
 
         if (shcut == "sticky") {
           y.value = "";
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             o.innerHTML = '<link href="https://fonts.googleapis.com/css?family=Reenie+Beanie" rel="stylesheet" type="text/css"><div class="note" style="width:350px; height:350px; background-color:#ffff88; font-family:\'Reenie Beanie\'; font-size:36px; border-bottom-right-radius: 60px 5px; transform: rotate(-3deg)" id="b" contenteditable="true"></div>';
             if (localStorage.sticky) {
               b["innerHTML"]=[localStorage.sticky];
@@ -415,8 +420,8 @@
         }
 
         if (shcut == ">") {
-          if (/\s/.test(nub) == false) {
-            o.innerHTML = "To use >, input a yubnub command and a search term as arguments, for example:<br>> wp Hedgehogs<br>(Uses Google to search Wikipedia and goes automatically to the first result)";
+          if (/\s/.test(nublc) == false) {
+            o.innerHTML = "To use the > redirect prefix, input a yubnub command and a search term as arguments, for example:<br>> wp Hedgehogs<br>(Uses Google to search Wikipedia and goes automatically to the first result)";
           } else {
             var surl = "";
             var nterm = sterm.replace(/.*?\s(.*)/,"$1");
@@ -446,7 +451,7 @@
         if (shcut == "create") {
           var cr = document.getElementById("create");
           var scn = document.getElementById("scname");
-          if (/\s/.test(nub) == true) {
+          if (/\s/.test(nublc) == true) {
             if (modson == "off") {
               lsshort(engines,tips);
             } else {
@@ -501,8 +506,8 @@
 
         if (shcut == "skin") {
           stylesheet = document.getElementById("stylesheet");
-// 	  if ls then list available skins
-// 	  if non-existent then print error
+//           if ls then list available skins
+//           if non-existent then print error
           stylesheet.href = "css/" + sterm + ".css";
           o.innerHTML = "yub.js skin successfully changed to \"" + sterm + "\"!";
           finished = "done";
@@ -511,7 +516,7 @@
         if (shcut == "tips" || shcut == "help" || shcut == "man") {
           var commList = "<table>";
           var noresult = 0;
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             for (var i = 0; i < tips.length; i++) {
               commList = commList + "<tr><td>" + tips[i].n + "</td><td>" + tips[i].d + "</td></tr>\n";
             }
