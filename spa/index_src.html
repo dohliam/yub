@@ -10,13 +10,15 @@
 
     <style>
 
+      @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
       body {
-        font-size: large;
-        font-family: sans-serif;
+        font: 16px 'Open Sans', sans-serif;
       }
       h2 {
         color: #FF8000;
         font: 72px 'Open Sans', sans-serif;
+        font-weight: 800;
         margin-top: auto;
         margin-bottom: auto;
       }
@@ -32,8 +34,29 @@
       }
       #create input[type=text] {
         color: gray;
+        font-family: 'Open Sans', sans-serif;
         font-style: italic;
         padding: 1px 6px 1px 6px;
+      }
+      .button {
+        border: none;
+        padding: 6px 8px 6px 8px;
+        border-radius: 2px;
+        min-width: 5%;
+        font-family: 'Open Sans';
+        color: #3A474D;
+        background-color: #DDDDDD;
+      }
+      .button:hover {
+        color: #FF8000;
+        cursor: pointer;
+      }
+      .inputbox {
+        border: 1px solid #DDDDDD;
+        border-radius: 2px;
+        padding: 5px 8px 5px 8px;
+        min-width: 20%;
+        font-family: 'Open Sans';
       }
 
 
@@ -276,12 +299,17 @@ var tips = [
 
 
       function yubComm(nub) {
-        var nublc = nub.toLowerCase();
+        var nublc = nub.toLowerCase().replace(/\s+$/, "");
 
         var finished = "";
 
         var o = document.getElementById("output");
         var y = document.getElementById("yub");
+
+        if (nub == "") {
+          o.innerHTML = "Please enter a command.";
+          finished = "done";
+        }
 
         if (nublc == "count") {
           var total = 0;
@@ -330,7 +358,7 @@ var tips = [
         loc = "";
 
         if (shcut == "list" || shcut == "ls") {
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             shcutList = "<table>";
             if (modson == "off") {
               lsshort(engines,tips);
@@ -362,7 +390,7 @@ var tips = [
         }
 
         if (shcut == "search" || shcut == "s") {
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             o.innerHTML = "Please enter a search string.";
           } else {
             if (modson == "off") {
@@ -391,7 +419,7 @@ var tips = [
 
 
         if (shcut == "whatis" || shcut == "w") {
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             o.innerHTML = "Please enter a command name.";
           } else {
             if (modson == "off") {
@@ -414,7 +442,7 @@ var tips = [
         }
 
         if (shcut == "where" || shcut == "wh") {
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             o.innerHTML = "Please enter a command name.";
           } else {
             if (modson == "off") {
@@ -451,7 +479,7 @@ var tips = [
             var addr = longArray[rfloor].split("\t")[3];
             window.location = addr;
           } else if (sterm == "git") {
-	    randgit();
+            randgit();
           } else if (sterm == "img") {
             var addr = "https://imgur.com/random";
             window.location = addr;
@@ -469,7 +497,7 @@ var tips = [
           } else {
             lslong(engines,mods);
           }
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             window.open(document.URL,'_blank','location=yes,height=570,width=520,scrollbars=yes,status=yes');
             window.open(window.location, '_self').close();
           } else if (/-u/.test(sterm) == true) {
@@ -519,7 +547,7 @@ var tips = [
 
         if (shcut == "href" || shcut == "link") {
           var url = location.href;
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             o.innerHTML = "The current url is: " + url;
           } else {
             var encurl = encodeURI(url + "?" + sterm);
@@ -530,7 +558,7 @@ var tips = [
         }
 
         if (shcut == "echo") {
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             o.innerHTML = "Hi there! :)";
           } else {
             o.innerHTML = sterm;
@@ -540,7 +568,7 @@ var tips = [
         }
 
         if (shcut == "sort") {
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             o.innerHTML = "Please input some text to sort.";
           } else {
             var d = delimit(sterm);
@@ -551,7 +579,7 @@ var tips = [
         }
 
         if (shcut == "shuffle") {
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             o.innerHTML = "Please input some text to shuffle.";
           } else {
             var d = delimit(sterm);
@@ -562,7 +590,7 @@ var tips = [
         }
 
         if (shcut == "uniq") {
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             o.innerHTML = "Please input some text as an argument to uniq.";
           } else {
             var d = delimit(sterm);
@@ -573,7 +601,7 @@ var tips = [
         }
 
         if (shcut == "uniqd") {
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             o.innerHTML = "Please input some text as an argument to uniqd.";
           } else {
             var d = delimit(sterm);
@@ -584,7 +612,7 @@ var tips = [
         }
 
         if (shcut == "ucase" || shcut == "upcase") {
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             o.innerHTML = "Please input some text to convert to upper case.";
           } else {
             o.innerHTML = sterm.toUpperCase();
@@ -593,7 +621,7 @@ var tips = [
         }
 
         if (shcut == "lcase" || shcut == "downcase") {
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             o.innerHTML = "Please input some text to convert to lower case.";
           } else {
             o.innerHTML = sterm.toLowerCase();
@@ -602,7 +630,7 @@ var tips = [
         }
 
         if (shcut == "ccase" || shcut == "capcase" || shcut == "caps") {
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             o.innerHTML = "Please input some text to convert to initial caps.";
           } else {
             o.innerHTML = sterm.toLowerCase().replace(/(^|\s+)(.)/g,function(_, a, l){return a+l.toUpperCase();});
@@ -611,7 +639,7 @@ var tips = [
         }
 
         if (shcut == "wc") {
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             o.innerHTML = "Please input some text to count.";
           } else if (/^\-c /.test(sterm) == true) {
             c = sterm.replace(/^\-c /,"");
@@ -625,7 +653,7 @@ var tips = [
         }
 
         if (shcut == "watch" || shcut == "ytp") {
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             o.innerHTML = "Please provide a search term for something you would like to watch.";
           } else {
             p = '<iframe width="640" height="390" src="https://www.youtube.com/embed?listType=search&list=' + sterm + '" frameborder="0" allowfullscreen></iframe>';
@@ -650,7 +678,7 @@ var tips = [
 
         if (shcut == "sticky") {
           y.value = "";
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             o.innerHTML = '<link href="https://fonts.googleapis.com/css?family=Reenie+Beanie" rel="stylesheet" type="text/css"><div class="note" style="width:350px; height:350px; background-color:#ffff88; font-family:\'Reenie Beanie\'; font-size:36px; border-bottom-right-radius: 60px 5px; transform: rotate(-3deg)" id="b" contenteditable="true"></div>';
             if (localStorage.sticky) {
               b["innerHTML"]=[localStorage.sticky];
@@ -692,8 +720,8 @@ var tips = [
         }
 
         if (shcut == ">") {
-          if (/\s/.test(nub) == false) {
-            o.innerHTML = "To use >, input a yubnub command and a search term as arguments, for example:<br>> wp Hedgehogs<br>(Uses Google to search Wikipedia and goes automatically to the first result)";
+          if (/\s/.test(nublc) == false) {
+            o.innerHTML = "To use the > redirect prefix, input a yubnub command and a search term as arguments, for example:<br>> wp Hedgehogs<br>(Uses Google to search Wikipedia and goes automatically to the first result)";
           } else {
             var surl = "";
             var nterm = sterm.replace(/.*?\s(.*)/,"$1");
@@ -723,7 +751,7 @@ var tips = [
         if (shcut == "create") {
           var cr = document.getElementById("create");
           var scn = document.getElementById("scname");
-          if (/\s/.test(nub) == true) {
+          if (/\s/.test(nublc) == true) {
             if (modson == "off") {
               lsshort(engines,tips);
             } else {
@@ -778,8 +806,8 @@ var tips = [
 
         if (shcut == "skin") {
           stylesheet = document.getElementById("stylesheet");
-// 	  if ls then list available skins
-// 	  if non-existent then print error
+//           if ls then list available skins
+//           if non-existent then print error
           stylesheet.href = "css/" + sterm + ".css";
           o.innerHTML = "yub.js skin successfully changed to \"" + sterm + "\"!";
           finished = "done";
@@ -788,7 +816,7 @@ var tips = [
         if (shcut == "tips" || shcut == "help" || shcut == "man") {
           var commList = "<table>";
           var noresult = 0;
-          if (/\s/.test(nub) == false) {
+          if (/\s/.test(nublc) == false) {
             for (var i = 0; i < tips.length; i++) {
               commList = commList + "<tr><td>" + tips[i].n + "</td><td>" + tips[i].d + "</td></tr>\n";
             }
@@ -873,7 +901,8 @@ var tips = [
         }
 
         if (finished == "") {
-          o.innerHTML = "Command not found.<br>Type 'list' or 'ls' to see all commands.";
+          o.innerHTML = "Command '" + shcut + "' not found. <input class='button' type='submit' value='edit' onclick='editNub(\"" + nub + "\")' accesskey='e'><br>Type 'list' or 'ls' to see all commands.";
+          y.value = "";
         } 
 }
 
@@ -1040,6 +1069,13 @@ var tips = [
         init();
       }
 
+      function editNub(nub) {
+        yub = document.getElementById("yub");
+        yub.value = nub;
+	yub.focus();
+      }
+
+
 
     </script>
   </head>
@@ -1050,7 +1086,7 @@ var tips = [
       <h3>web command-line</h3>
         <form>
             <input class="inputbox" type="text" value="" autofocus="autofocus" autocomplete="off" id="yub">
-            <input class="button" type="submit" value="yubSearch" onclick="return yubSearch(document.getElementById('yub').value)">
+            <input class="button" type="submit" value="yub!" onclick="return yubSearch(document.getElementById('yub').value)">
             <div class="grey"><p class='small'>type 'list' to see all available search shortcuts, or 'tips' for more commands</p></div>
         </form>
     </div>
@@ -1059,14 +1095,14 @@ var tips = [
 
     <div id="create" style="display:none;">
     <center>
-      <h4>Create a new yubSearch command!</h4>
+      <h4>Create a new yub command!</h4>
         <table>
           <tr><td>Shortcut Name:</td><td><input type="text" id="scname" size="50" value="Enter the command name here" onclick="this.value='';"></td></tr>
           <tr><td>Search Address:</td><td><input type="text" id="saddr" size="50" value="Enter search URL with search term replaced by %s" onclick="this.value='';"></td></tr>
           <tr><td>Default URL:</td><td><input type="text" id="defurl" size="50" value="Enter the address to go to if search term is blank" onclick="this.value='';"></td></tr>
           <tr><td>Description:</td><td><input type="text" id="descr" size="50" value="Enter a description or site title" onclick="this.value='';"></td></tr>
         </table><br>
-      <input id="createcomm" type="button" value="Create New Command!" accesskey='c' onclick='createYub();'>
+      <input id="createcomm" type="button" class="button" value="Create New Command!" accesskey='c' onclick='createYub();'>
     </center>
     </div>
 
@@ -1075,10 +1111,10 @@ var tips = [
       <span style="font-size:small; float:right; cursor:pointer;" onclick='clearTimer();' title="click to close">x</span><br>
       <center>
         <span id="hour">00</span>:<span id="min">00</span>:<span id="sec">00</span><br><br>
-        <input type="button" id="start" onClick="stopWatch()" accesskey='s' title="Shift+Alt+S" value="Start">
-        <input type="button" id="pause" onClick="pause()" accesskey='p' title="Shift+Alt+P" value="Pause">
-        <input type="button" id="play" onClick="play()" accesskey='o' title="Shift+Alt+O" value="Continue">
-        <input type="button" id="reset" onClick="reset()" accesskey='r' title="Shift+Alt+R" value="Reset">
+        <input type="button" class="button" id="start" onClick="stopWatch()" accesskey='s' title="Shift+Alt+S" value="Start">
+        <input type="button" class="button" id="pause" onClick="pause()" accesskey='p' title="Shift+Alt+P" value="Pause">
+        <input type="button" class="button" id="play" onClick="play()" accesskey='o' title="Shift+Alt+O" value="Continue">
+        <input type="button" class="button" id="reset" onClick="reset()" accesskey='r' title="Shift+Alt+R" value="Reset">
       </center>
     </div>
     </div>
