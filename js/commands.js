@@ -601,6 +601,7 @@
         }
 
         if (finished == "") {
-          o.innerHTML = "Command not found.<br>Type 'list' or 'ls' to see all commands.";
+          o.innerHTML = "Command '" + shcut + "' not found. <input class='button' type='submit' value='edit' onclick='editNub(\"" + nub + "\")' accesskey='e'><br>Type 'list' or 'ls' to see all commands.";
+          y.value = "";
         } 
 }

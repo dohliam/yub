@@ -159,3 +159,10 @@
         }
         init();
       }
+
+      function editNub(nub) {
+        yub = document.getElementById("yub");
+        yub.value = nub;
+	yub.focus();
+      }
+
