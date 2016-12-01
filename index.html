@@ -32,7 +32,7 @@
       <h3>web command-line</h3>
         <form>
             <input class="inputbox" type="text" value="" autofocus="autofocus" autocomplete="off" id="yub">
-            <input class="button" type="submit" value="yubSearch" onclick="return yubSearch(document.getElementById('yub').value)">
+            <input class="button" type="submit" value="yub!" onclick="return yubSearch(document.getElementById('yub').value)">
             <div class="grey"><p class='small'>type 'list' to see all available search shortcuts, or 'tips' for more commands</p></div>
         </form>
     </div>
@@ -41,14 +41,14 @@
 
     <div id="create" style="display:none;">
     <center>
-      <h4>Create a new yubSearch command!</h4>
+      <h4>Create a new yub command!</h4>
         <table>
           <tr><td>Shortcut Name:</td><td><input type="text" id="scname" size="50" value="Enter the command name here" onclick="this.value='';"></td></tr>
           <tr><td>Search Address:</td><td><input type="text" id="saddr" size="50" value="Enter search URL with search term replaced by %s" onclick="this.value='';"></td></tr>
           <tr><td>Default URL:</td><td><input type="text" id="defurl" size="50" value="Enter the address to go to if search term is blank" onclick="this.value='';"></td></tr>
           <tr><td>Description:</td><td><input type="text" id="descr" size="50" value="Enter a description or site title" onclick="this.value='';"></td></tr>
         </table><br>
-      <input id="createcomm" type="button" value="Create New Command!" accesskey='c' onclick='createYub();'>
+      <input id="createcomm" type="button" class="button" value="Create New Command!" accesskey='c' onclick='createYub();'>
     </center>
     </div>
 
@@ -57,10 +57,10 @@
       <span style="font-size:small; float:right; cursor:pointer;" onclick='clearTimer();' title="click to close">x</span><br>
       <center>
         <span id="hour">00</span>:<span id="min">00</span>:<span id="sec">00</span><br><br>
-        <input type="button" id="start" onClick="stopWatch()" accesskey='s' title="Shift+Alt+S" value="Start">
-        <input type="button" id="pause" onClick="pause()" accesskey='p' title="Shift+Alt+P" value="Pause">
-        <input type="button" id="play" onClick="play()" accesskey='o' title="Shift+Alt+O" value="Continue">
-        <input type="button" id="reset" onClick="reset()" accesskey='r' title="Shift+Alt+R" value="Reset">
+        <input type="button" class="button" id="start" onClick="stopWatch()" accesskey='s' title="Shift+Alt+S" value="Start">
+        <input type="button" class="button" id="pause" onClick="pause()" accesskey='p' title="Shift+Alt+P" value="Pause">
+        <input type="button" class="button" id="play" onClick="play()" accesskey='o' title="Shift+Alt+O" value="Continue">
+        <input type="button" class="button" id="reset" onClick="reset()" accesskey='r' title="Shift+Alt+R" value="Reset">
       </center>
     </div>
     </div>

@@ -1,10 +1,12 @@
+      @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
       body {
-        font-size: large;
-        font-family: sans-serif;
+        font: 16px 'Open Sans', sans-serif;
       }
       h2 {
         color: #FF8000;
         font: 72px 'Open Sans', sans-serif;
+        font-weight: 800;
         margin-top: auto;
         margin-bottom: auto;
       }
@@ -20,6 +22,27 @@
       }
       #create input[type=text] {
         color: gray;
+        font-family: 'Open Sans', sans-serif;
         font-style: italic;
         padding: 1px 6px 1px 6px;
+      }
+      .button {
+        border: none;
+        padding: 6px 8px 6px 8px;
+        border-radius: 2px;
+        min-width: 5%;
+        font-family: 'Open Sans';
+        color: #3A474D;
+        background-color: #DDDDDD;
+      }
+      .button:hover {
+        color: #FF8000;
+        cursor: pointer;
+      }
+      .inputbox {
+        border: 1px solid #DDDDDD;
+        border-radius: 2px;
+        padding: 5px 8px 5px 8px;
+        min-width: 20%;
+        font-family: 'Open Sans';
       }
