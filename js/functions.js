@@ -162,7 +162,7 @@
 
       function editNub(nub) {
         yub = document.getElementById("yub");
-        yub.value = nub;
+        yub.value = decodeURIComponent(nub.replace(/@39@/g, "'"));
 	yub.focus();
       }
 

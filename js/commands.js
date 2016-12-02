@@ -601,7 +601,8 @@
         }
 
         if (finished == "") {
-          o.innerHTML = "Command '" + shcut + "' not found. <input class='button' type='submit' value='edit' onclick='editNub(\"" + nub + "\")' accesskey='e'><br>Type 'list' or 'ls' to see all commands.";
+          escNub = encodeURIComponent(nub).replace(/'/g, "@39@");
+          o.innerHTML = "Command '" + shcut + "' not found. <input class='button' type='submit' value='edit' onclick=\"editNub('" + escNub + "')\" accesskey='e'><br>Type 'list' or 'ls' to see all commands.";
           y.value = "";
         } 
 }
