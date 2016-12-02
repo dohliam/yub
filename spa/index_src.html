@@ -8,60 +8,6 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:800' rel='stylesheet' type='text/css'>
     <link rel="search" type="application/opensearchdescription+xml" title="yub.js" href="xml"/>
 
-    <style>
-
-      @import url('https://fonts.googleapis.com/css?family=Open+Sans');
-
-      body {
-        font: 16px 'Open Sans', sans-serif;
-      }
-      h2 {
-        color: #FF8000;
-        font: 72px 'Open Sans', sans-serif;
-        font-weight: 800;
-        margin-top: auto;
-        margin-bottom: auto;
-      }
-      h3 {
-        margin-top: auto;
-        margin-bottom: 25px;
-      }
-      .small {
-        font-size: small;
-      }
-      .grey {
-        color: gray;
-      }
-      #create input[type=text] {
-        color: gray;
-        font-family: 'Open Sans', sans-serif;
-        font-style: italic;
-        padding: 1px 6px 1px 6px;
-      }
-      .button {
-        border: none;
-        padding: 6px 8px 6px 8px;
-        border-radius: 2px;
-        min-width: 5%;
-        font-family: 'Open Sans';
-        color: #3A474D;
-        background-color: #DDDDDD;
-      }
-      .button:hover {
-        color: #FF8000;
-        cursor: pointer;
-      }
-      .inputbox {
-        border: 1px solid #DDDDDD;
-        border-radius: 2px;
-        padding: 5px 8px 5px 8px;
-        min-width: 20%;
-        font-family: 'Open Sans';
-      }
-
-
-    </style>
-
     <link id="stylesheet" rel="stylesheet" href="css/default.css">
     <script src="mods.js"></script>
 
@@ -901,7 +847,8 @@ var tips = [
         }
 
         if (finished == "") {
-          o.innerHTML = "Command '" + shcut + "' not found. <input class='button' type='submit' value='edit' onclick='editNub(\"" + nub + "\")' accesskey='e'><br>Type 'list' or 'ls' to see all commands.";
+          escNub = encodeURIComponent(nub).replace(/'/g, "@39@");
+          o.innerHTML = "Command '" + shcut + "' not found. <input class='button' type='submit' value='edit' onclick=\"editNub('" + escNub + "')\" accesskey='e'><br>Type 'list' or 'ls' to see all commands.";
           y.value = "";
         } 
 }
@@ -1071,7 +1018,7 @@ var tips = [
 
       function editNub(nub) {
         yub = document.getElementById("yub");
-        yub.value = nub;
+        yub.value = decodeURIComponent(nub.replace(/@39@/g, "'"));
 	yub.focus();
       }
 

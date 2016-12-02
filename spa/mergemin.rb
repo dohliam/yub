@@ -8,7 +8,7 @@ min = File.open("index.html", "w")
 
 # # merge to single-page html file
 
-$nub = File.read("../css/default.css")
+# $nub = File.read("../css/default.css")
 $commands = File.read("../js/commands.js")
 $engines = File.read("../js/engines.js")
 $functions = File.read("../js/functions.js")
@@ -23,7 +23,7 @@ merge << content
 
 # # minify to compressed standalone version
 
-$nub = File.read("../css/default.css")
+# $nub = File.read("../css/default.css")
 $commands = Uglifier.compile(File.read("../js/commands.js"))
 $engines = Uglifier.compile(File.read("../js/engines.js"))
 $functions = Uglifier.compile(File.read("../js/functions.js"))
