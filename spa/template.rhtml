@@ -30,7 +30,7 @@
 
     </script>
   </head>
-  <body onload="var geturl = location.href; if (/\?/.test(geturl) == true) { var args = /\?(.*)/.exec(geturl)[1]; args=/\+/.test(args)?args.replace(/\+/g,' '):args; yubSearch(decodeURIComponent(args)); finished = 'done';}">
+  <body onload="var geturl = location.href; if (/\?/.test(geturl) == true) { var args = /\?(.*)/.exec(geturl)[1]; args=/\+/.test(args)?args.replace(/\+/g,' ').replace(/\s+$/,''):args; yubSearch(decodeURIComponent(args)); finished = 'done';}">
     <center>
     <div id="ybox">
       <h2>yub.js</h2>
