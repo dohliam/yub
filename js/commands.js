@@ -1,12 +1,12 @@
       function yubComm(nub) {
-        var nublc = nub.toLowerCase().replace(/\s+$/, "");
+        var nublc = nub.toLowerCase().replace(/[\s\+]$/, "");
 
         var finished = "";
 
         var o = document.getElementById("output");
         var y = document.getElementById("yub");
 
-        if (nub == "") {
+        if (nublc == "") {
           o.innerHTML = "Please enter a command.";
           finished = "done";
         }
@@ -51,7 +51,7 @@
         }
 
         var shcut = nublc.replace(/^([>a-z]+) .*/,"$1");
-        var sterm = nub.replace(/^[>A-Za-z]+ (.*)/,"$1");
+        var sterm = nub.replace(/[\s\+]+$/, "").replace(/^[>A-Za-z]+ (.*)/,"$1");
         var stermlc = sterm.toLowerCase();
 
         addr = "";
@@ -565,7 +565,7 @@
         for (var i = 0; i < engines.length; i++) {
           if (engines[i].n == shcut) {
             finished = "done";
-            if (shcut == stermlc && /\s/.test(nub) == false) {
+            if (shcut == stermlc && /\s/.test(nublc) == false) {
               addr = engines[i].f;
               window.location=addr;
             } else {
