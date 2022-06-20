@@ -110,7 +110,7 @@ Theming support is available in the form of custom css files loaded through the 
 
 To return to the default skin, just type `skin default`. To remove all css, use `skin none`.
 
-Skins currently don't persist across yub sessions (this would require setting a cookie, which we've managed to avoid so far), but you can change the link/bookmark to your yub.js instance to something like `https://dohliam.github.io/yub/?skin%20terminal` to always start yub.js with a particular skin loaded. Alternatively, once you decide on a skin you want to make the default for your local installation, just rename it to `default.css` (you can rename the original `default.css` file to `classic.css` or similar if you don't want to overwrite it). Your new file will be loaded as the default the next time you open up yub.js.
+Skins currently don't persist across yub sessions (this would require setting a cookie, which we've managed to avoid so far), but you can change the link/bookmark to your yub.js instance to something like `https://dohliam.github.io/yub/?skin%20terminal` to always start yub.js with a particular skin loaded. Alternatively, once you decide on a skin you want to make the default for your local installation, just rename it to `default.css` (you can rename the original `default.css` file to `old.css` or similar if you don't want to overwrite it). Your new file will be loaded as the default the next time you open up yub.js.
 
 To make a new skin, just copy one of the existing skin files to a new file e.g. `mynewskin.css` and customize to your heart's content! (And don't forget to add your custom skins to the [skins gallery](https://github.com/dohliam/yub/wiki/skins_gallery) in the wiki so others can enjoy them!)
 
